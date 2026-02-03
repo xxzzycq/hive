@@ -274,7 +274,7 @@ public class ODPSNLPServlet extends HttpServlet {
     sendAsJson(response, config);
   }
 
-  private void sendError(HttpServletResponse response, Integer errorCode, String message) {
+  private void sendError(HttpServletResponse response, int errorCode, String message) {
     response.setStatus(errorCode);
     response.setContentType("application/json");
     response.setCharacterEncoding("UTF-8");
