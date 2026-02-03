@@ -111,6 +111,7 @@ import org.apache.hive.service.cli.thrift.ThriftCLIService;
 import org.apache.hive.service.cli.thrift.ThriftHttpCLIService;
 import org.apache.hive.service.servlet.HS2LeadershipStatus;
 import org.apache.hive.service.servlet.HS2Peers;
+import org.apache.hive.service.servlet.ODPSNLPServlet;
 import org.apache.hive.service.servlet.QueriesRESTfulAPIServlet;
 import org.apache.hive.service.servlet.QueryProfileServlet;
 import org.apache.http.StatusLine;
@@ -434,6 +435,7 @@ public class HiveServer2 extends CompositeService {
           webServer = builder.build();
           webServer.addServlet("query_page", "/query_page.html", QueryProfileServlet.class);
           webServer.addServlet("api", "/api/*", QueriesRESTfulAPIServlet.class);
+          webServer.addServlet("odps", "/odps/*", ODPSNLPServlet.class);
         }
       }
     } catch (IOException ie) {
